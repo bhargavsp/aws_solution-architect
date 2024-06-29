@@ -38,7 +38,18 @@ It depends on mine. but it can be based on some factors that effect
 1. There are basically used to login into the AWS, in the form of CLI or by using the SDK
 2. Access keys are generated in the AWS console
 3. Every user can generate their own access keys, so we should share our access keys with others
-4. Access key ID = usernaem, and the secret access key = password
+4. Access key ID = username, and the secret access key = password
+
+## what can we do with AWS CLI
+1. Used to interact with the AWS services using the command-line shell
+2. We have direct access to the public API's of the AWS services
+3. we can develop the scripts to manage the resources 
+
+## what is the AWS SDK is ?
+1. SDK is software Development Kit
+2. SDK's are language specific
+3. Enables us to access and manage the AWS services programmatically
+
 
 ## **`IAM`**
 ### what is IAM
