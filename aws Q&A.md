@@ -29,6 +29,12 @@ It depends on mine. but it can be based on some factors that effect
 3. Lambda (Function as a Service)
 4. Rekognition (Software as a Service)
 
+## **`IAM`**
+1. Root account created by default bu it shouldnt be used so we create IAM for every AWS user and share with them the required access to use only the services they need
+2. Groups only contain users, not other groups
+3. users no need to belong to a group, a single user can also be in multiple groups
+4. users and groups are assigned a JSON document, called an IAM policies
+5. In AWS we apply a least privilege principle, dont give more permissions than a user needs
 
 
 
@@ -47,12 +53,3 @@ It depends on mine. but it can be based on some factors that effect
 
 
 
-
-
-
-
-
-
-
-
-hi
