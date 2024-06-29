@@ -29,6 +29,17 @@ It depends on mine. but it can be based on some factors that effect
 3. Lambda (Function as a Service)
 4. Rekognition (Software as a Service)
 
+### different ways to login into the AWS account
+1. AWS Management Console (protected by password + MFA)
+2. AWS Command Line Interface (CLI): protected by access keys
+3. AWS Software Developer Kit (SDK) - for code: protected by access keys
+
+### usage of the Access keys in the AWS
+1. There are basically used to login into the AWS, in the form of CLI or by using the SDK
+2. Access keys are generated in the AWS console
+3. Every user can generate their own access keys, so we should share our access keys with others
+4. Access key ID = usernaem, and the secret access key = password
+
 ## **`IAM`**
 ### what is IAM
 1. Root account created by default but it shouldnt be used so we create IAM for every AWS user and share with them the required access to use only the services they need
