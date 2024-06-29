@@ -8,3 +8,4 @@ It is a cloud provider, there are 200+ services in the aws
 
 ### all the Regions's through out the world are connected in a AWS private network 
 
+### In AWS we apply a least privilege principle, dont give more permissions than a user needs
