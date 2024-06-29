@@ -30,12 +30,23 @@ It depends on mine. but it can be based on some factors that effect
 4. Rekognition (Software as a Service)
 
 ## **`IAM`**
-1. Root account created by default bu it shouldnt be used so we create IAM for every AWS user and share with them the required access to use only the services they need
+### what is IAM
+1. Root account created by default but it shouldnt be used so we create IAM for every AWS user and share with them the required access to use only the services they need
 2. Groups only contain users, not other groups
 3. users no need to belong to a group, a single user can also be in multiple groups
 4. users and groups are assigned a JSON document, called an IAM policies
 5. In AWS we apply a least privilege principle, dont give more permissions than a user needs
 
+### what are the defense mechanisms in the IAM 
+There are 2 types
+1. IAM password policy
+2. MFA (Multi Factor Authentication) (its recommended to use it in AWS)
+
+### what are the MFA devices options in the AWS
+1. Virtual MFA devices- Google Authenticator, Authy
+2. Universal 2nd factor security key - yubikey by Yubico
+3. Hardware key Fob MFA device- Gemalto
+4.  Hardware key Fob MFA device by AWS GovCloud (US)- surepassID
 
 
 
