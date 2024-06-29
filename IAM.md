@@ -1,4 +1,4 @@
-# IAM
+# IAM (needs a work around on the IAM policy)
 
 ### In the IAM Dashboard, the `account alias` must be unique across all Amazon Web Services (AWS) products within a given network partition. A partition is a group of AWS Regions
 
@@ -10,6 +10,13 @@
 Navigate to the IAM user console in the AWS and click on the create user | ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/d59b141b-0bc4-4c52-a173-fd01e3a01b71)
 
 
-
 ## IAM Policy structure
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/2f4b1f34-f6fe-4327-9fbd-bd040559abe4)
+
+
+## IAM password policy
+1. set minimum characters types
+2. Require specific characters - lowecase, uppsercase, numbers, non-alpha
+3. Allow all IAM users to change their own passwords ot not
+4. password expiraton setup
+5. prevent password re-use
