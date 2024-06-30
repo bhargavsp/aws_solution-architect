@@ -50,6 +50,8 @@ It depends on mine. but it can be based on some factors that effect
 2. SDK's are language specific
 3. Enables us to access and manage the AWS services programmatically
 
+## can we give the IAM user credentails teh access keys and secret access key in the AWS instance connect/
+Never ever give the IAM access keys and the secret aceess keys in the aws intance connect
 
 ## **`IAM`**
 ### what is IAM
