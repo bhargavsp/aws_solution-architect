@@ -10,4 +10,7 @@
 2. only a specified number if IP's are used as Private IP's
 3. private IP means the machine can only be identified on that particular private network only
 
-
+## can we connect to the EC2 instance through SSH with the private IP
+1. It is not possible because the private IP's only belong to the particular network.
+2. example the AWS instance private IP belongs to the AWS network,
+3. Only the internal AWS network private IP can connect to the other private IP inside the AWS network.  
