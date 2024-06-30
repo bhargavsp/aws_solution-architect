@@ -59,3 +59,10 @@ Storage Optimized | Storage Optimized EC2 instances are great for workloads requ
 6. Instead, use a random public IP and register a DNS name to it
 7. Or, as we'll see later, use a Load Balancer and don't use a public IP 
 
+## EC2 Placement Groups
+ 1. It is the placement of our Ec2 instance where tjhey are placed in the AWS physical Hardware
+ 2. we can create our placment of the EC2 instance, so that AWS will place them accordingly, as we cant access the pyhsical hardware of the AWS directly
+ 3. There are 3 types of the placment groups
+ 4. Cluster—clusters instances into a low-latency group in a single Availability Zone <br/>![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/1231be70-fb83-4222-b181-62e28479b5cd)
+ 5. Spread—spreads instances across underlying hardware (max 7 instances per group per AZ) — critical applications <br/> ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/7eb889b6-728d-4810-a8ae-43bea0e8b7f4)
+ 6. Partition—spreads instances across many different partitions (which rely on different sets of racks) in an AZ, partition can upto 7 per AZ. can span upto multiple AZ's no limit and Scales upto 100'S of EC2 instances per group, wecan know whihc partition is on which rack that is possible by using the metadata <br/>
