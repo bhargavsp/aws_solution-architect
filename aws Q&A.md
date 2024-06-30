@@ -73,6 +73,8 @@ Never ever give the IAM access keys and the secret aceess keys in the aws intanc
 ### You're planning to migrate on-premises applications to AWS. Your company has strict compliance requirements that require your applications to run on dedicated servers. You also need to use your own server-bound software license to reduce costs. Which EC2 Purchasing Option is suitable for you?
 Dedicate Hosts: Dedicated Hosts are good for companies with strong compliance needs or for software that have complicated licensing models (BYOL). This is the most expensive EC2 Purchasing Option available.
 
+
+
 ## **`IAM`**
 ### what is IAM
 1. Root account created by default but it shouldnt be used so we create IAM for every AWS user and share with them the required access to use only the services they need
