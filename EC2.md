@@ -50,4 +50,12 @@ Storage Optimized | Storage Optimized EC2 instances are great for workloads requ
 1. Spot fleets allows us to automatically request spot instances with the lowest price based on the pools we defined
 2. Spot Fleet is a set of Spot Instances and optionally On-demand Instances. It allows you to automatically request Spot Instances with the lowest price.
 
-## 
+## What are Elastic IP's 
+1. stop and start of the instances in AWS changes the public IP, if need an fixed IP then the elastic IP does that work, even on the start stop instance doesnt change the public ip of that instance
+2. With an Elastic IP address, you can mask the failure of an instance or software by rapidly remapping the address to another instance in your account.
+3. we have only 5 elastic IP in one AWS account
+4. Try to avoid the Elastic IP's as
+5. They often reflect poor architectural decisions
+6. Instead, use a random public IP and register a DNS name to it
+7. Or, as we'll see later, use a Load Balancer and don't use a public IP 
+
