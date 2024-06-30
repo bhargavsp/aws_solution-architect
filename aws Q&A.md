@@ -3,7 +3,7 @@
 | Topics | Link to Navigate |
 | :---: | :---: |
 **`AWS Intro`** | https://github.com/bhargavsp/aws_solution-architect/blob/443f77c033e383d5286707c6444ffa9644cbf063/aws%20Q%26A.md?plain=1#L7
-
+ | 
 ## **`AWS Introduction`**
 ### how to choose an AWS region
 It depends on mine. but it can be based on some factors that effect
@@ -29,6 +29,9 @@ It depends on mine. but it can be based on some factors that effect
 3. Lambda (Function as a Service)
 4. Rekognition (Software as a Service)
 
+### You are preparing to launch an application that will be hosted on a set of EC2 instances. This application needs some software installation and some OS packages need to be updated during the first launch. What is the best way to achieve this when you launch the EC2 instances?
+EC2 User Data is used to bootstrap your EC2 instances using a bash script. This script can contain commands such as installing software/packages, download files from the Internet, or anything you want.
+
 ### different ways to login into the AWS account
 1. AWS Management Console (protected by password + MFA)
 2. AWS Command Line Interface (CLI): protected by access keys
@@ -52,6 +55,21 @@ It depends on mine. but it can be based on some factors that effect
 
 ## can we give the IAM user credentails teh access keys and secret access key in the AWS instance connect/
 Never ever give the IAM access keys and the secret aceess keys in the aws intance connect
+
+## **`EC2`**
+### what are the EC2 instances purchasing options
+1. On-Demand Instances — short workload, predictable pricing, pay by second
+2. Reserved (I & 3 years) 
+  • Reserved Instances — long workloads  72% discount pricing compared to the on-demand instances
+  • Convertible Reserved Instances — long workloads with flexible instances  66% dicount compared to the on-demand instances
+3. Savings Plans (l & 3 years) —commitment to an amount of usage, long workload, locked to the specific instance family and AWS region
+4. Spot Instances — short workloads, cheap, can lose instances (less reliable)
+5. Dedicated Hosts — book an entire physical server, control instance placement, the most expensive option in the AWS
+6. Dedicated Instances — no other customers will share your hardware
+7. Capacity Reservations — reserve capacity in a specific AZ for any duration 
+
+### You're planning to migrate on-premises applications to AWS. Your company has strict compliance requirements that require your applications to run on dedicated servers. You also need to use your own server-bound software license to reduce costs. Which EC2 Purchasing Option is suitable for you?
+Dedicate Hosts: Dedicated Hosts are good for companies with strong compliance needs or for software that have complicated licensing models (BYOL). This is the most expensive EC2 Purchasing Option available.
 
 ## **`IAM`**
 ### what is IAM
