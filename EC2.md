@@ -66,3 +66,11 @@ Storage Optimized | Storage Optimized EC2 instances are great for workloads requ
  4. Cluster—clusters instances into a low-latency group in a single Availability Zone <br/>![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/1231be70-fb83-4222-b181-62e28479b5cd)
  5. Spread—spreads instances across underlying hardware (max 7 instances per group per AZ) — critical applications <br/> ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/7eb889b6-728d-4810-a8ae-43bea0e8b7f4)
  6. Partition—spreads instances across many different partitions (which rely on different sets of racks) in an AZ, partition can upto 7 per AZ. can span upto multiple AZ's no limit and Scales upto 100'S of EC2 instances per group, wecan know whihc partition is on which rack that is possible by using the metadata <br/>
+
+## EC2 hibernate
+1. The EC2 instance takes time to boot up and run the EC2 user data scrits to install the application. This is the readon the EC2 hibernate is brought into picture
+2. use cases: if we have long running processing, saving ram and if we want less time to start the ec2 instance after stop
+3. Here the ram memory will be stored to the EBS volume, and once the EC2 instance is started afer stop, the saved ram in EBS will be loaded to the instance and reboots faster
+4. the security mesures for using the Hibernate in EC2 is, the EBS volume should be enough to store the ram and mainly the root EBS volume must be encrypted
+5. FOr performing the EC2 hibernation, the EC2 instance root volumne must be an instance store volume 
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/860b5874-5e88-4c80-b2b9-900852993a38)
