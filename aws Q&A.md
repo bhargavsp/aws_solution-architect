@@ -4,6 +4,8 @@
 | :---: | :---: |
 **`AWS Intro`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q%26A.md#aws-introduction
 **`EC2`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q&A.md#ec2
+**`IAM`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q&A.md#iam
+
 ## **`AWS Introduction`**
 ### how to choose an AWS region
 It depends on mine. but it can be based on some factors that effect
