@@ -48,4 +48,29 @@ there are 4 typs of load balancers in the AWS
 ## Load balancer security groups
  ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/b1194963-2c14-43d6-b46e-696bc5cf2f39)
 
+## Application Load Balancer
+1. Load balancing to multiple HTTP applications across machines, multiplpe EC2 instance form a group called the (target groups)
+2. Load balancing to multiple applications on the same machine with the help of containers (ex: ecs)
+3. Support for HTTP/2 and WebSocket
+4. support the redirect of the traffic from HTTP to HTTPS
+5. Routing tables to different target groups: 
+• Routing based on path in URL (example.com/users & example.com/posts)
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/263b6e7c-96a2-4de3-95f2-cac8e7932098)
+• Routing based on hostname in URL (one.example.com & other.example.com) <br/>
+• Routing based on Query String, Headers (example.com/users?id= 1 23&order=false) <br/>
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/e79c9c2b-02cb-47b4-8b1a-a3044a55af99)
+
+7. ALB are a great fit for micro services & container-based application (example: Docker & Amazon ECS)
+8. Has a port mapping feature to redirect to a dynamic port in ECS
+
+
+## what are target groups in the load balancing
+Taret groups can be created of multiple types
+1. EC2 instances (can be managed by an Auto Scaling Group) — HTTP
+2. ECS tasks (managed by ECS itself) - HTTP
+3. Lambda functions — HTTP request is translated into a JSON event (based by an concept of the serverless in AWS)
+4. IP Addresses — must be private IPS
+5. ALB can route to multiple target groups
+6. Health checks are at the target group level 
+
 
