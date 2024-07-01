@@ -73,6 +73,8 @@ Never ever give the IAM access keys and the secret aceess keys in the aws intanc
 ### You're planning to migrate on-premises applications to AWS. Your company has strict compliance requirements that require your applications to run on dedicated servers. You also need to use your own server-bound software license to reduce costs. Which EC2 Purchasing Option is suitable for you?
 Dedicate Hosts: Dedicated Hosts are good for companies with strong compliance needs or for software that have complicated licensing models (BYOL). This is the most expensive EC2 Purchasing Option available.
 
+### what are EC2 instance checks
+Amazon EC2 (Elastic Compute Cloud) status checks are automated health checks that run every minute on instances to identify software and hardware issues. These checks are important for ensuring that instances are operating as expected and for identifying issues early
 
 
 ## **`IAM`**
@@ -104,15 +106,27 @@ AMIs are built for a specific AWS Region, they're unique for each AWS Region. Yo
 You can run a database on an EC2 instance that uses an Instance Store, but you'll have a problem that the data will be lost if the EC2 instance is stopped (it can be restarted without problems). One solution is that you can set up a replication mechanism on another EC2 instance with an Instance Store to have a standby copy. Another solution is to set up backup mechanisms for your data. It's all up to you how you want to set up your architecture to validate your requirements. In this use case, it's around IOPS, so we have to choose an EC2 Instance Store.
 
 
+## **`ELB & ASG`**
+### Does the ELB provide the static IP wiht the DNS name 
+Only Network Load Balancer provides both static DNS name and static IP. While, Application Load Balancer provides a static DNS name but it does NOT provide a static IP. The reason being that AWS wants your Elastic Load Balancer to be accessible using a static endpoint, even if the underlying infrastructure that AWS manages changes.
 
+### You are using an Application Load Balancer to distribute traffic to your website hosted on EC2 instances. It turns out that your website only sees traffic coming from private IPv4 addresses which are in fact your Application Load Balancer's IP addresses. What should you do to get the IP address of clients connected to your website?
+When using an Application Load Balancer to distribute traffic to your EC2 instances, the IP address you'll receive requests from will be the ALB's private IP addresses. To get the client's IP address, ALB adds an additional header called "X-Forwarded-For" contains the client's IP address.
 
+### what are the Registered targets in a Target Groups in ELB
+1. The target type of the target group determines how you register targets
+2. For example, you can register instance IDs, IP addresses, or an Application Load Balancer
+3. Your Network Load Balancer starts routing requests to targets as soon as the registration process completes and the targets pass the initial health checks.
 
+### componenets of the EC2 auto scaling 
+EC2 Auto Scaling is made up of three components:
+1. a launch template to know what to scale
+2. an Auto Scaling Group (ASG) that decides where to launch the EC2 instance
+3. optional scaling policies that define when to scale
 
+### For compliance purposes, you would like to expose a fixed static IP address to your end-users so that they can write firewall rules that will be stable and approved by regulators. What type of Elastic Load Balancer would you choose?
+Network Load Balancer has one static IP address per AZ and you can attach an Elastic IP address to it. Application Load Balancers and Classic Load Balancers have a static DNS name.
 
-
-
-
-
-
-
+### Your boss asked you to scale your Auto Scaling Group based on the number of requests per minute your application makes to your database. What should you do?
+There's no CloudWatch Metric for "requests per minute" for backend-to-database connections. You need to create a CloudWatch Custom Metric, then create a CloudWatch Alarm.
 
