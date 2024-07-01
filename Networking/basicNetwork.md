@@ -23,3 +23,6 @@
 5.  TLD (Top Level Domain)servers: it stores the addresses of the Authoritative name servers so that they can be communicated to the particular authoritative name server once they are ser 
 6.  Authoritative name server: they are maintained by the domain registrars (ex. godaddy), the authoritative name server is assigned while we are buying the domain from the godaddy, and also this information is shared with the TLD servers, so they TLD serveers contact the particular authoritative name server while the request is made from the client. Refer to for brief explanation https://www.youtube.com/watch?v=JkEYOt08-rU&t=1s and
 7.  https://www.cloudflare.com/learning/dns/what-is-dns/
+
+## OSI model
+Open Systems Interconnection (OSI) model, is a conceptual framework that divides `network communications` functions into seven layers. ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/b1886e86-5579-4f5a-9a58-d85698e83541)
