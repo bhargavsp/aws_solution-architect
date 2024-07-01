@@ -52,25 +52,40 @@ there are 4 typs of load balancers in the AWS
 1. Load balancing to multiple HTTP applications across machines, multiplpe EC2 instance form a group called the (target groups)
 2. Load balancing to multiple applications on the same machine with the help of containers (ex: ecs)
 3. Support for HTTP/2 and WebSocket
-4. support the redirect of the traffic from HTTP to HTTPS
+4. redirect of the traffic from HTTP to HTTPS (level 7)
 5. Routing tables to different target groups: 
 • Routing based on path in URL (example.com/users & example.com/posts)
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/263b6e7c-96a2-4de3-95f2-cac8e7932098)
 • Routing based on hostname in URL (one.example.com & other.example.com) <br/>
 • Routing based on Query String, Headers (example.com/users?id= 1 23&order=false) <br/>
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/e79c9c2b-02cb-47b4-8b1a-a3044a55af99)
-
 7. ALB are a great fit for micro services & container-based application (example: Docker & Amazon ECS)
 8. Has a port mapping feature to redirect to a dynamic port in ECS
 
 
-## what are target groups in the load balancing
+## target groups in the Application load balancing
 Taret groups can be created of multiple types
 1. EC2 instances (can be managed by an Auto Scaling Group) — HTTP
 2. ECS tasks (managed by ECS itself) - HTTP
 3. Lambda functions — HTTP request is translated into a JSON event (based by an concept of the serverless in AWS)
 4. IP Addresses — must be private IPS
 5. ALB can route to multiple target groups
-6. Health checks are at the target group level 
+6. Health checks are at the target group level
+7. we can also give the fixed hostname for the APplication load balancer
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/f23e10af-bd33-479f-b97d-1177585c84b2)
 
+## Network load balancer
+1. forward TCP & UDP traffic to your instance (layer 4)
+2. less latency ~ 100ms (vs ALB ~400ms) means handle millions of requests per second
+3. NLB has 1 static IP per AZ and also support assigning Elastic IP (it is helpful for listing specific IP, for example when there is condition of using 1,2,3 IPs to access our application
+4. we can use the HTTP in the backend, but still it transfer the traffic in the TCP, UDP in the frontend
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/718e2103-11c2-44ac-a509-fc96d19e60d1)
+
+## target groups in the Network load balancing
+1. they can support the health chekcs support of the tCP, HTTP, HTTPS protocols
+2. The target groups in the NLB can be the EC2 isntances combined in a target group or the IP address (the private IP of the serveer or the EC2 isntances in the on-premises must be hard coded) combined in the target group
+3. we can also have the application load balancer inside the netwrok the load balancer as the NLB supports the HTTP or HTTPS requests in the backend while communcicating wiht the EC2 instsances
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/33fbd9ef-9675-457b-954c-7b6fb5ed8250)
+
+## gateway load balancer
 
