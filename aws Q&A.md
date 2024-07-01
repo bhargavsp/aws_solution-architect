@@ -99,6 +99,9 @@ There are 2 types
 ### You can use an AMI in N.Virginia Region us-east-1 to launch an EC2 instance in any AWS Region.
 AMIs are built for a specific AWS Region, they're unique for each AWS Region. You can't launch an EC2 instance using an AMI in another AWS Region, but you can copy the AMI to the target AWS Region and then use it to create your EC2 instances.
 
+## **`EBS`**
+### You are running a high-performance database that requires an IOPS of 310,000 for its underlying storage. What do you recommend?
+You can run a database on an EC2 instance that uses an Instance Store, but you'll have a problem that the data will be lost if the EC2 instance is stopped (it can be restarted without problems). One solution is that you can set up a replication mechanism on another EC2 instance with an Instance Store to have a standby copy. Another solution is to set up backup mechanisms for your data. It's all up to you how you want to set up your architecture to validate your requirements. In this use case, it's around IOPS, so we have to choose an EC2 Instance Store.
 
 
 
