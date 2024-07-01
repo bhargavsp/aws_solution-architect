@@ -95,6 +95,9 @@ There are 2 types
 4.  Hardware key Fob MFA device by AWS GovCloud (US)- surepassID
 
 
+## **`AMI`**
+### You can use an AMI in N.Virginia Region us-east-1 to launch an EC2 instance in any AWS Region.
+AMIs are built for a specific AWS Region, they're unique for each AWS Region. You can't launch an EC2 instance using an AMI in another AWS Region, but you can copy the AMI to the target AWS Region and then use it to create your EC2 instances.
 
 
 
