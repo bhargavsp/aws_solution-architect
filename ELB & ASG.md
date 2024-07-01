@@ -22,5 +22,30 @@
 It forwards the traffic to the multiple servers through an `single End point of access` DNS (Elastic Load Balancer) we dont know which EC2 server fulfilled our request
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/db031d73-4a9e-49c7-aff3-1c5d10924a48)
 
+## why do we use the load balancer?
+1. Spread load across multiple downstream instances
+2. Expose a single point of access (DNS) to your application
+3. Seamlessly handle failures of downstream instances
+4. Do regular health checks to your instances
+5. Provide SSL termination (HTTPS) for your websites
+6. Enforce stickiness with cookies
+7. High availability across zones
+8. Separate public traffic from private traffic
+
+## why use an Elastic Load balancer
+1. AWS takes care of maintaince, upgrades, high avaliability and low cost as the aws mainteance everything
+2. aslo integrated with the other aws services
+3. And also Health checks are made for load balancers regular to check the connected instances are working or not by using hte protocol, port, endpoint to that particular instance
+
+## types of load balancers in AWS
+there are 4 typs of load balancers in the AWS
+1. Classic Load Balancer (VI - old generation) — 2009 — CLB - HTTR HTTPS,TCR SSI (secure TCP)
+2. Application Load Balancer (v2 - new generation) — 20 1 6 — ALB - HTTPS,WebSocket
+3. Network Load Balancer (v2 - new generation) — 20 1 7 — NLB - TCR TLS (secure TCP), UDP
+4. Gateway Load Balancer — 2020 — Operates at layer 3 (Network layer) — IP Protocol
+5. some load balances can be setup as internal (private) or external (public) ELB's
+
+## Load balancer security groups
+ ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/b1194963-2c14-43d6-b46e-696bc5cf2f39)
 
 
