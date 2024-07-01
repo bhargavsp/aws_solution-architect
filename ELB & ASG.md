@@ -36,6 +36,7 @@ It forwards the traffic to the multiple servers through an `single End point of 
 1. AWS takes care of maintaince, upgrades, high avaliability and low cost as the aws mainteance everything
 2. aslo integrated with the other aws services
 3. And also Health checks are made for load balancers regular to check the connected instances are working or not by using hte protocol, port, endpoint to that particular instance
+4. The health check configuration includes information like the protocol, ping port, ping path, response timeout, and health check interval.
 
 ## types of load balancers in AWS
 there are 4 typs of load balancers in the AWS
@@ -129,4 +130,57 @@ Taret groups can be created of multiple types
 3. for CLB disabled by default, no charges even if enabled for the inter AZ data change 
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/eca1c15e-715f-439c-bb17-3ecdc86101a2)
 
+## Connection Draining or Deregistration Delay 
+1. Connection draining is a process that ensures that existing, in-progress requests are given time to complete when a VM is removed from an instance group or the instance in unhealthy condition or the instance is de-registering or when an endpoint is removed from network endpoint groups (NEGs) that are zonal in scope.
+2. Feature naming
+   * Connection Draining — for CLB
+   * Deregistration Delay — for ALB & NLB 
+3. draining connection hold will be between 1 to 3600 seconds (default: 300 seconds)
+4. Can be disabled (set value to 0)
+5. Set to a low value if your requests are short
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/6f6612c3-487c-4d3a-9cae-4f5e7f4ec036)
 
+## ASG Auto scaling Group in AWS
+1. In real-life, the load on your websites and application can change
+2. In the cloud, you can create and get rid of servers very quickly
+3. The goal of an Auto Scaling Group (ASG) is to: 
+   * Scale out (add EC2 instances) to match an increased load
+   * Scale in (remove EC2 instances) to match a decreased load
+   * Ensure we have a minimum and a maximum number of EC2 instances running
+   * Automatically register new instances to a load balancer
+   * Re-create an EC2 instance in case a previous one is terminated (ex: if unhealthy)
+   * ASG are free (you only pay for the underlying EC2 instances)
+   * ASG maintains the desired capacity all the time
+4. using the load balancer with te auto scalling group <br/>![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/ac4139a8-4a16-4305-8dd5-45639c5e1152)
+5. Auto scaling Group attributes uses launche templates<br/> ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/5ade7713-bb37-46dc-9842-e61d9db60a66)
+6. Auto scaling with the `Cloud watch alarms`
+7. based on the cloud watch metrics such as average cpu are computed for the overall ASG instances and scalein or scale out policies are created 
+
+## Auto scaling groups - scaling policies
+1. Dynamic Scaling:
+   * Target Tracking Scaling
+     * Simple to set-up
+     * Example: I want the average ASG CPU to stay at around 40% 
+   * Simple Scaling: 
+     * When a CloudWatch alarm is triggered (example CPU > 70%), then add 2 units
+     * When a CloudWatch alarm is triggered (example CPU < 30%), then remove I
+   * Step scaling:
+     * Even this works based on the clodwatch alarm, but if the cpu utilization is 60% add 1, if it is 80% add 2 instanes. if 90% add 3 instances
+     * we can specifiy the steps to increase the number of instances based on the %age
+2. Scheduled actions 
+   * Anticipate a scaling based on known usage patterns
+   * Example: increase the min capacity to 10 at 5 pm on Fridays
+3. Predictive scaling: It is based on the Machine Learning metrices. continously forecast load and schedule scaling based on the forecast (ex: big billion day)
+
+## Good metrics to scale on
+1. CPUUtilization: Average CPU utilization across your instances
+2. RequestCountPerTarget: to make sure the number of requests per EC2 instances is stable <br/> ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/b54f5dfe-985d-4536-a428-c5ed1194c212)
+3. Average Network In / Out (if you're application has too much uploads and downloads, and you know the network is going to be down)
+4. Any custom metric (that you push using CloudWatch)
+
+## ASG - scaling cooldowns
+1. ASG after scale in/out the ASG enters the cooldown period (default 300 seconds)
+2. During the cooldown period the ASG will not launch or termincate the new instances
+3. The reson for the cooldown period is, we are giving sometime for the metrices to  be stabilize, and to see the what the new metric will come
+4. The advice here is to use the ready-to-use AMI to reduce the configuration time in order to be serving the request fasters and reduce the cooldown period
+5. we need to have something like the detailed monitoring for the ASG to get the access to metrics every one minute and to make sure that you have these metrics beign updated fast enough
