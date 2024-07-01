@@ -80,6 +80,7 @@ Taret groups can be created of multiple types
 2. less latency ~ 100ms (vs ALB ~400ms) means handle millions of requests per second
 3. NLB has 1 static IP per AZ and also support assigning Elastic IP (it is helpful for listing specific IP, for example when there is condition of using 1,2,3 IPs to access our application
 4. we can use the HTTP in the backend, but still it transfer the traffic in the TCP, UDP in the frontend
+5. the NLB supports HTTP health checks as well as TCP and HTTPS
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/718e2103-11c2-44ac-a509-fc96d19e60d1)
 
 ## target groups in the Network load balancing
