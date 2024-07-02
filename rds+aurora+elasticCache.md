@@ -59,3 +59,31 @@ Lets say we want to perfome the analytics and reporting on the production databa
 4. not used for the scaling just a backup server no reads can be performed or cant be accessed by us the standyby DB
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/1946305a-c699-4bd4-9ff7-ab1f8bec4075)
 
+## RDS custom
+1. we dont have access to the underlying hardware for the RDS databases, they are fully managed by the AWS, but we RDS custom we can Manage the oracle and Microsoft SQL server Databse with OS and database customization
+2. RDS: Automates setup, operation, and scaling of database in AWS
+3. RDS Custom: access to the underlying database and OS so you can Configure settings, Install patches, Enable native features , Access the underlying EC2 Instance using SSH or SSM Session Manager
+4. we should De-activate Automation Mode to perform your customization
+5. better to take a DB snapshot before customization
+
+## RDS vs. RDS Custom 
+• RDS: entire database and the OS to be managed by AWS 
+• RDS Custom: full admin access to the underlying OS and the database
+
+## Amazon Aurora
+1. Aurora is a proprietary technology from AWS (not open sourced)
+2. Postgres and MySQL are both supported as Aurora DB (that means your drivers will work as if Aurora was a Postgres or MySQL database)
+3. Aurora is "AWS cloud optimized" and claims 5x performance improvement over MySQL on RDS, over 3x the performance of Postgres on RDS
+4. Aurora storage automatically grows in increments of 1OGB, up to 128 TB
+5. Aurora can have up to 15 replicas and the replication process is faster than MySQL (sub 10 ms replica lag)
+6. As the aurora is cloud native it has high avaliability
+7. Aurora costs more than RDS (20% more) — but is more efficient
+
+## aurora high avaliability and read scaling
+1.  Aurora stores 6 copies of your data across 3 AZ every time we store the data
+2.  Aurora can perform the self healing when its corrupted or bad, then it does the self healing with the peer-to-peer replication in the backend
+3.  storage is triped across 100s of volumes, we dont need to interact wiht the storage, that is completely managed by the AWS <br/>
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/3a3eb9f4-7e49-4e89-a649-22d36e523775)
+
+## Aurora as a cluster
+Load balancing happens at the connetion level not the statement level
