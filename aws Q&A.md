@@ -130,3 +130,17 @@ Network Load Balancer has one static IP address per AZ and you can attach an Ela
 ### Your boss asked you to scale your Auto Scaling Group based on the number of requests per minute your application makes to your database. What should you do?
 There's no CloudWatch Metric for "requests per minute" for backend-to-database connections. You need to create a CloudWatch Custom Metric, then create a CloudWatch Alarm.
 
+## **`RDS, Aurora, Elastic Cache`**
+### is there possibility to setup the read replicas DB as the disaster recovery DB
+Yes, we can setup as MultiAZ
+
+### how we setup RDS from single AZ to Multi AZ
+1. It is a zero downtime operation(no need to stop the DB to convert from single az to the multi AZ)
+
+### But the following will happen internally from converting single AZ to Multi AZ
+1. A snapshot is taken
+2. A new DB is restored from the snapshot in a new AZ
+3. Synchronization is established between the two databases<br/>
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/fdc8413f-c39f-4a15-bcba-51f289179d63)
+
+
