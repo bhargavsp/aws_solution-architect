@@ -86,4 +86,47 @@ Lets say we want to perfome the analytics and reporting on the production databa
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/3a3eb9f4-7e49-4e89-a649-22d36e523775)
 
 ## Aurora as a cluster
-Load balancing happens at the connetion level not the statement level
+1. Load balancing happens at the connetion level not the statement level
+2. There will be a shared storage volume, which is auto expanding from 10GB to 128TB for the Aurora DB cluster
+3. There will be writer end point and the reader endpoint for the communication, as we can access the Aurora DB 
+4. we can add the Aurora cluster database region to the other region to make it global aurora but we need have compartiable size a large type of instance  
+6. ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/df1055ac-7365-4df6-8c51-78f4e3d62b47)
+
+## Auto scaling in aurora
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/646be40a-1a81-4179-b969-b32ca397289c)
+
+## Aurora custom endpoints
+1. we actually keep set the larger size read replicas to get the custom Endpoints and to run the analytical queries on the specific replicas
+2. once the custom end point is set, the default read endpoint will not disapper but it would not be used anymore, as we need to use the custom end point for each set of the replicas
+
+## aurora serverless
+1. Automated database instantiation and auto-scaling based on actual usage
+2. Good for infrequent, intermittent or unpredictable workloads
+3. No capacity planning needed
+4.  Pay per second, can be more cost-effective
+5.  client talks to the proxy fleet (managed by the aurora)
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/f9d3251a-63d0-46b1-b55e-dff46ae5648b)
+
+## Global Aurora
+1. Aurora Cross Region Read Replicas: 
+  * Useful for disaster recovery
+  * Simple to put in place
+2. Aurora Global Database (recommended):
+  * 1 Primary Region (read / write)
+  * Up to 5 secondary (read-only) regions, replication lag is less than 1 second
+  * Up to 16 Read Replicas per secondary region
+  * Helps for decreasing latency
+  * Promoting another region (for disaster recovery) has an RTO (Recover time objective) 1 minute
+  * Typical aurora takes 1 second to replicate data across regions for your aurora global database
+
+## Aurora machine learning
+1. Enables you to add MC-based predictions to your applications via SQL
+2. Simple, optimized, and secure integration between Aurora and AWS ML services
+3. Supported services 
+  * Amazon SageMaker (use with any ML model) 
+  * Amazon Comprehend (for sentiment analysis) 
+4. You don't need to have ML experience
+5. Use cases: fraud detection, ads targeting, sentiment analysis, product recommendations 
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/5749c285-d184-4ebc-b622-5a490ee3a505)
+
+
