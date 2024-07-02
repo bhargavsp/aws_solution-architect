@@ -129,4 +129,5 @@ Lets say we want to perfome the analytics and reporting on the production databa
 5. Use cases: fraud detection, ads targeting, sentiment analysis, product recommendations 
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/5749c285-d184-4ebc-b622-5a490ee3a505)
 
-
+## RDS Backup 
+1. Daily full backup of the database 
