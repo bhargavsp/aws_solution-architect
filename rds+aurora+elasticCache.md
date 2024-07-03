@@ -130,4 +130,49 @@ Lets say we want to perfome the analytics and reporting on the production databa
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/5749c285-d184-4ebc-b622-5a490ee3a505)
 
 ## RDS Backup 
-1. Daily full backup of the database 
+* Automatic Backup
+1. Daily full backup of the database
+2. Transaction logs are backed up for every 5 min (for this automtic backups we can restore to any point of time oldest backup is 5min ago)
+3. 1 - 35 days of retention, if set to 0 no autom backup performs
+* Manual backup
+* 1. Manually triggered backup has a life long retention period
+**NOTE:** RDS database can cost you some money if it is stopped, while not using it, instead it is better to take a snapshot adn delete the original RDS database, so it saves you some money.
+
+## Aurora Backups
+* Automated backups
+  1. 1 - 35 days (cannot be disabled)
+  2. point-in-time recovery in that timeframe
+* Manual DB snapshots
+  1. Manual triggered by the user
+  2. Retention of the backup for as long as we want
+ 
+## Restore from the backup
+1. Restoring a RDS / Aurora backup or a snapshot creates a new database
+2. Restoring MySQL RDS database from S3 
+  * Create a backup of your on-premises database
+  * Store it on Amazon S3 (object storage)
+  * Restore the backup file onto a new RDS instance running MySQL 
+3. Restoring MySQL Aurora cluster from S3 
+  * Create a backup of your on-premises database using Percona XtraBackup
+  * Store the backup file on Amazon S3
+  * Restore the backup file onto a new Aurora cluster running MySQL
+
+## Aurora Database cloning
+1. Create a new Aurora DB Cluster from an existing one
+2. Faster than snapshot & restore Uses copy-on-write protocol
+3. Initially, the new DB cluster uses the same data volume as the original DB cluster (fast and effcient — no copying is needed)
+4. When updates are made to the new DB cluster data, then additional storage is allocated and data is copied to be separated
+5. Very fast & cost-effective
+6. Useful to create a "staging ' database from a "production" database without impacting the production database.
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/e416587b-115d-4575-adee-6afb6a6b7ba8)
+
+## RDS and AUrora security
+1. At-rest encryption: 
+* Database master & replicas encryption using AWS KMS — must be defined as launch time 
+* If the master is not encrypted, the read replicas cannot be encrypted 
+* To encrypt an un-encrypted database, go through a DB snapshot & restore as encrypted 
+2. In-flight encryption: TLS-ready by default, use the AWS TLS root certificates client-side
+3. IAM Authentication: IAM roles to connect to your database (instead of username/pw)
+4. Security Groups: Control Network access to your RDS / Aurora DB
+5. No SSH available except on RDS Custom 
+6. Audit Logs can be enabled and sent to CloudWatch Logs for longer retention 
