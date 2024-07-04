@@ -8,7 +8,7 @@
    * Postgres
    * MySQL
    * MariaDB
-   * Oracle
+   * Oracle -  Oracle RDS database technology does NOT support IAM Database Authentication
    * Microsoft SQL Server
    * IBM DB2
    * Aurora (AWS Proprietary database)
