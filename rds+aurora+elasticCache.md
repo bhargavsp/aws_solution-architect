@@ -175,4 +175,43 @@ Lets say we want to perfome the analytics and reporting on the production databa
 3. IAM Authentication: IAM roles to connect to your database (instead of username/pw)
 4. Security Groups: Control Network access to your RDS / Aurora DB
 5. No SSH available except on RDS Custom 
-6. Audit Logs can be enabled and sent to CloudWatch Logs for longer retention 
+6. Audit Logs can be enabled and sent to CloudWatch Logs for longer retention
+
+## RDS Proxy
+1. we know we can deploy our RDS database within our VPC but now we can deploy the fully managed RDS database proxy on our VPC
+2. if we have an application the rds proxy pool and share the same DB connections already established within the database
+3. So, it imporves the overall efficiency by reducing the stress on database resources and minimize open connections
+4. RDS proxy is fully serverless, autoscalingm gihly avalibel(multi AZ)
+5. in case of the RDS failover, the rds proxy will redirect the active connections to the new database instance, so the rds proxy takes care of the RDS database failover and it reduces the failover time by 66%
+6. RDS proxy supports mySQL, MariaDB, PostgreSQL, MSSQL, aurora aswell
+7. To enforce and use the extra layer security to the AWS RDS instance, we can use the RDS Proxy as it uses the IAM authentication for the database connect and the IAM credentails can be securely stored in the AWS secrets Manager
+8. LAMDA functions will also use the RDS so here it makes a lot of requests, here the rds proxy pool the multiple connections and use the less connection to the DB instance
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/384a56f3-9018-4acc-a271-c942690c118e)
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/451b50f4-4962-4253-9514-67c250532b5a)
+
+## Amazon Elastic Cache overview
+1. The same way RDS is to get managed Relational Databases...
+2. ElastiCache is to get managed Redis or Memcached
+3. Caches are in-memory databases with really high performance, low latency
+4. Helps reduce load off of databases for read intensive workloads
+5. Helps make your application stateless by putting the state of your applcaition into Amazon ELastiCache
+6. AWS takes care of OS maintenance / patching, optimizations, setup, configuration, monitoring, failure recovery and backups
+7. Using ElastiCache involves heavy application code changes, its not like click and use service, we need to configure our application to query the cache, before query the database
+
+## ElastiCache solution architecture - DB Cache
+1. ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/9b2efea0-cd32-46df-a3d6-c70db047228c)
+2. we made the application stateless by writing the logging session data of the particualr user into the AMazon ElastiCache![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/c9a6d124-be8e-454b-9851-40501aac25ac)
+
+## Redis vs Memcached
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/ae54ac92-18c6-4c3f-bd3d-ffa8ebda8088)
+
+## ElastiCache - Cache security
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/cdc596af-5af3-4e16-bb83-963af63560cd)
+
+## patterns of ElastiCache
+1. Lazy Loading. all the read data is cached, data can become stale in cache 
+2. Write Through: Adds or update data in the cache when written to a DB (no stale data)
+3. Session Store: store temporary session data in a cache (using features)
+
+## ElastiCache Redis use case
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/26ade502-9d7a-4b5b-8f1e-7002331dd49e)
