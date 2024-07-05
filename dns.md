@@ -44,6 +44,21 @@
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/363032f6-aa33-4a86-8120-b2c601ffef6f)
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/c6e7a15a-0aad-4bac-9966-ecfa5133eaab)
 
+## Route53 - record TTL (Time to live)
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/5836f615-6943-4e77-b525-eea089bc9606)
+
+## CNAME vs ALias
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/6f865771-bf06-412f-82b9-8f9f5b8c19ca)
 
 
+## Alias record
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/2bec7ebc-c5e8-4931-a55e-f3ab94825f1e)
 
+ ## ROute 53 Routing policies
+1. Simple
+2. Weighted
+3. Failover
+4. Latency based
+5. Geolocation
+6. Multi-Value Answer
+7. Geoproximity (using Route 53 Traffc Flow feature) 
