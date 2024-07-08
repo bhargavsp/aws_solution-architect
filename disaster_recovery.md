@@ -27,3 +27,12 @@
 
 ## On-premise strategy with AWS Migration
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/279c86de-c19d-4c7b-885f-f5bc22285981)
+
+## AWS Application Migration Service (MGS)
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/61d0c5da-5aed-4f70-b720-d93163883913)
+
+## Transferring large amount of data into AWS
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/d50959ea-7262-4828-8acf-2263c534eada)
+
+## VMware cloud on AWS
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/e5f1aedb-a1a8-485e-9673-ab2ff1cf0526)
