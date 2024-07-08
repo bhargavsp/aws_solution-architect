@@ -23,3 +23,19 @@
 
 ## AWS IAM Identity Center
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/7b174e2b-3b27-413a-bc84-9bf6171ac3db)
+
+## Microsoft Active Directory (AD)
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/f32ec1f6-37e3-4223-a0b2-3df49aa4bc6f)
+
+## AWS Directory Services
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/ead2640d-3272-4e5e-a21f-52cf5b5d5b0d)
+
+## AWS identity center and active directory
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/2e1d008f-3494-42b2-aa5c-1be8c1e20ce0)
+
+## AWS control Tower
+1. Easy way to set up and govern a secure and compliant multi-account AWS environment based on best practices
+2. AWS Control Tower uses AWS Organizations to create accounts
+
+## what are control tower - guardrails
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/889038ad-0446-4b24-b250-cf8bd6312130)
