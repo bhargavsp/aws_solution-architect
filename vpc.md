@@ -32,8 +32,13 @@ The subnet mask is used to define the allowed IP range for that subnet
 4.  192.1680.0 - 192.168.255.255 (192.168.00/16) e.g., home networks
 5.  Rest all the IP addesses on teh Internet are the Public
 
-## AWS VPC
+## AWS VPC (Virtual Private Cloud)
 1. **VPC:** AWS has an default VPC assigned for every AWS account
 2. **Subnet:** have 3 subnets, in 3 different AZ, with 3 CIDR blocks, within the same AWS default VPC range
 3. **Route table:** It routes the traffic to route through our VPC
 4. **Internet Gateway**: This gives the Internet access through our VPC 
+5. We can create multiple VPC's in a region (max.5 per region- soft limit)
+6. we can have max 5 CIDR per VPC
+   * Min. size in /28 (16 IP)
+   * Max. size is /16 (65536 IP)
+ 7. Your VPC CIDR should NOT overlap with your other networks (e.g.. corporate) 
