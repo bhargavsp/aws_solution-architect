@@ -36,3 +36,12 @@ campaigns
 4. Supports Linux, macOS, and Windows
 5. Send session log data to S3 or CloudWatch Logs
 6. ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/6ac6a11b-b92a-4e98-aba1-ec28ec92a330)
+
+## SYstems Manager - Run Command
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/c652a8d7-af2e-4c89-8500-ae5f29aa009e)
+
+## AWS Batch vs Lambda
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/5d34691c-dd54-4497-9ef5-c1199e3692f6)
+
+## AWS Amplify
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/661a9d0a-b9a1-42f3-89cc-61c2f40e8163)
