@@ -134,3 +134,14 @@ It is to access the EC2 instances that are on the private subnet,
 ## VPN Cloud Hub
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/bb28c44d-aff1-4746-ab1b-e37e8c5ed2d8)
 
+## Direct connect (DX)
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/5d093ee7-bf96-4980-aa7a-595d82f1d0eb)
+
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/e7a0bab7-c04f-4776-8bd5-b69386b7da54)
+
+## Transit Gateway
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/45536fa2-8e13-4d9f-ae46-71c3f17a2bb0)
+
+## transit gateway vs vitual private gateway
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/6b248d0c-3eb6-455f-bfd7-7440994a7063)
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/ca5074fe-61ca-4f53-a33a-37d9be28bf43)
