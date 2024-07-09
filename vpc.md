@@ -110,3 +110,27 @@ It is to access the EC2 instances that are on the private subnet,
 
 ## VPC peering
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/6cab2868-5a13-4b66-8749-f04a5a2373ae)
+
+## VPC Endpoint
+1. Interface Endpoint only preferred, if the access is required from on-premises (Site to Site VPN or Direct Connect), a differentVPC or a different region else use the gateway enpoint as it is free
+2. There are 2 types of Endpoints
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/b8994789-0b0d-4734-a45b-315f0fa0e5b2)
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/2041229f-27f2-47c0-857a-05bd56be298d)
+
+## VPC Flow Logs
+1. Capture information about IP traffc going into your interfaces: 
+2. VPC Flow Logs 
+3. Subnet Flow Logs 
+4. Elastic Network Interface (ENI) Flow Logs 
+5. Helps to monitor & troubleshoot connectivity issues 
+6. Flow logs data can go to S3, CloudWatch Logs, and Kinesis Data Firehose 
+7. Captures network information from AWS managed interfaces too: ELB, RDS, ElastiCache, Redshift, WorkSpaces, NATGW,Transit Gateway...
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/a0fcea6b-a96e-4438-8080-9ece5f4e5794)
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/8b1a2e4e-e988-4a4b-951c-1d463af41ddb)
+
+## SIte-site VPN
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/af5aa839-65b0-4c1b-82e0-42fa51aa1090)
+
+## VPN Cloud Hub
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/bb28c44d-aff1-4746-ab1b-e37e8c5ed2d8)
+
