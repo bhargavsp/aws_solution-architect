@@ -1,4 +1,4 @@
-![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/0a27657a-6cda-42ed-b539-6790b9c6d246)# VPC (Virtual Private Cloud)
+# VPC (Virtual Private Cloud)
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/55d97410-81a8-427a-b06f-2db00dc96bf1)
 
 ## Understanding the CIDR, Private and Public IP
@@ -72,7 +72,8 @@ It is to access the EC2 instances that are on the private subnet,
 5. Requires an IGW (Private Subnet => NATGW => IGW) 
 6. 5 Gbps of bandwidth with automatic scaling up to 100 Gbps 
 7. No Security Groups to manage / required 
-8. Blackhole in the route table means the ec2 instance connected  to that is stopped or terminated 
+8. Blackhole in the route table means the ec2 instance connected  to that is stopped or terminated
+9. To make the instances highly available, we should configure NAT gatways in the multiple AZ, for the fault tolerance
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/81bd85f9-51a7-467e-a592-36be1737414f)
 
 ## NAT gatewat vs NAT instance
@@ -81,3 +82,31 @@ It is to access the EC2 instances that are on the private subnet,
 ## NAT gateway vs Bastion hosts
 1. Bastion Host: It handles inbound traffic from the internet, typically SSH or RDP connections, and forwards them to instances in private subnets.
 2. NAT Instance: It primarily handles outbound traffic initiated by instances in private subnets by translating their private IP addresses to a public IP address.
+
+## Security Groups and NACLs
+1. NACL are like a firewall which control traffic from and to subnets
+2. One NACL per subnet, new subnets are assigned the Default NACL 
+3. You define NACL Rules: 
+4. Rules have a number ( I -32766), higher precedence with a lower number 
+5. First rule match will drive the decision 
+6. Example: if you define #100 ALLOW 10.0.O.lO/32 and #200 DENY 10.0.0.10/32, the IP address will be allowed because 1 00 has a higher precedence over 200 
+   * The last rule is an asterisk (*) and denies a request in case of no rule match 
+   * AWS recommends adding rules by increment of 100 
+   * Newly created NACLs will deny everything 
+   * NACL are a great way of blocking a specific IP address at the subnet level
+
+1. Incoming Request: So let's take an example of a subnet and we know when you have an EC2 instance that we attach a security group to it. But there is an extra level of protection on the subnet that we haven't seen yet, which is your network ACL or NACL. And let's take an example to really understand the role of a NACL in an incoming request. So a request goes to your EC2 instance, now what is happening from a network perspective? Well, first the request is going to make it to the NACL before going into the subnets. And so there are going to be some inbound rules on the NACL that are going to be defined. And if the request is not allowed, then the request doesn't go in. And if it is allowed, then it will go in, right? So the NACL is stateless. So we'll see what that means in a second. So the first request goes through the NACL and then it reaches inside the subnets and it goes through the security group inbound rules, okay. So we know how this works. So again, if the request is not allowed explicitly then it is denied. Now something about security group is that they are stateful. So remember NACLs are stateless and security groups are stateful. So what does that mean? That means that if the request makes it through the inbound rules of the security group and makes it to the EC2 instance, the EC2 instance will then reply with whatever reply there is to do for the application perspective. And then the outbound is automatically going to be accepted at the security group level. This is because the security group is stateful. That means whatever is accepted in can go also out. So here, there is no rules being evaluated. And the security group outbound rules are not mattering in this example. So now that we know that the outbound at the security group level is always allowed because it's stateful, what happens still? Well the NACL is not stateful, it is stateless, and therefore, because it is stateless then the NACL outbound rules are going to be evaluated. And again, if they are not passing, then the request will not make it through. So this is for an incoming request. 
+2. Outgoing Request: Now let's go through the same scenario, but for an outgoing request, and you can try doing this on your own by pausing the video, just to see if you understand the difference between stateful and stateless. Okay. Did you try? Okay, let's go. So the security group this time, so the EC2 instance is making an outbound request. So it's doing a request to the outside. And so the EC2 instance will first maybe use, for example, connect to www.google.com, and so therefore the first rules that are going to be evaluated are the security group outbound rules. So is the traffic allowed out from the EC2 instance to the web? Then if the rules are good and the request is allowed, then the request goes through the NACL outbound rules as well. So they're evaluated. Then the request reaches www.google.com, it comes back to Amazon web services, and obviously the NACL is stateless and therefore the NACL inbound rules are going to be evaluated. And finally, while the inbound within the subnet at the security level is also going to be allowed no matter what, because of the statefulness of your security group rules. So here the inbound rules of your security group do not make a difference because the admin roles was already accepted and your security group is stateful. So hopefully that is a very clear explanation between stateful and stateless.
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/627c2641-a54d-4cbf-9202-5c1d03e8434f)
+
+## Ephemeral ports
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/cfede6ca-d36c-4419-a3db-d1be517ec33e)
+
+## NACL with the ephemeral port
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/6351c7b3-eb7c-4612-9611-9671201210f6)
+
+## SG's vs NACL's
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/71899554-1f2c-483e-afd3-b30302aab37c)
+
+## VPC peering
+![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/6cab2868-5a13-4b66-8749-f04a5a2373ae)
