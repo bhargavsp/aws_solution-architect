@@ -5,8 +5,13 @@
 **`AWS Intro`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q%26A.md#aws-introduction
 **`EC2`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q&A.md#ec2
 **`IAM`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q&A.md#iam
+https://github.com/bhargavsp/aws_solution-architect/edit/main/aws%20Q%26A.md#rds-aurora-elastic-cache
 
-## **`AWS Introduction`**
+<details>
+  <summary>  1. AWS Introduction </summary>
+  
+## **`AWS Introduction`** 
+
 ### how to choose an AWS region
 It depends on mine. but it can be based on some factors that effect
 1. compliance: with some restrictions for some government websites, with data governance and legal requirements
@@ -44,11 +49,11 @@ EC2 User Data is used to bootstrap your EC2 instances using a bash script. This 
 2. Access keys are generated in the AWS console
 3. Every user can generate their own access keys, so we should share our access keys with others
 4. Access key ID = username, and the secret access key = password
-
+  
 ## what can we do with AWS CLI
 1. Used to interact with the AWS services using the command-line shell
 2. We have direct access to the public API's of the AWS services
-3. we can develop the scripts to manage the resources 
+3. we can develop the scripts to manage the resources
 
 ## what is the AWS SDK is ?
 1. SDK is software Development Kit
@@ -58,6 +63,12 @@ EC2 User Data is used to bootstrap your EC2 instances using a bash script. This 
 ## can we give the IAM user credentails teh access keys and secret access key in the AWS instance connect/
 Never ever give the IAM access keys and the secret aceess keys in the aws intance connect
 
+</details>
+
+
+<details>
+  <summary>  2. EC2 </summary>
+  
 ## **`EC2`**
 ### what are the EC2 instances purchasing options
 1. On-Demand Instances — short workload, predictable pricing, pay by second
@@ -76,7 +87,12 @@ Dedicate Hosts: Dedicated Hosts are good for companies with strong compliance ne
 ### what are EC2 instance checks
 Amazon EC2 (Elastic Compute Cloud) status checks are automated health checks that run every minute on instances to identify software and hardware issues. These checks are important for ensuring that instances are operating as expected and for identifying issues early
 
+</details>
 
+
+<details>
+  <summary>  3. IAM </summary>
+  
 ## **`IAM`**
 ### what is IAM
 1. Root account created by default but it shouldnt be used so we create IAM for every AWS user and share with them the required access to use only the services they need
@@ -96,6 +112,10 @@ There are 2 types
 3. Hardware key Fob MFA device- Gemalto
 4.  Hardware key Fob MFA device by AWS GovCloud (US)- surepassID
 
+</details>
+
+<details>
+  <summary>  4. AMI </summary>
 
 ## **`AMI`**
 ### You can use an AMI in N.Virginia Region us-east-1 to launch an EC2 instance in any AWS Region.
@@ -105,6 +125,10 @@ AMIs are built for a specific AWS Region, they're unique for each AWS Region. Yo
 ### You are running a high-performance database that requires an IOPS of 310,000 for its underlying storage. What do you recommend?
 You can run a database on an EC2 instance that uses an Instance Store, but you'll have a problem that the data will be lost if the EC2 instance is stopped (it can be restarted without problems). One solution is that you can set up a replication mechanism on another EC2 instance with an Instance Store to have a standby copy. Another solution is to set up backup mechanisms for your data. It's all up to you how you want to set up your architecture to validate your requirements. In this use case, it's around IOPS, so we have to choose an EC2 Instance Store.
 
+</details>
+
+<details>
+  <summary>  5. ELB & ASG </summary>
 
 ## **`ELB & ASG`**
 ### Does the ELB provide the static IP wiht the DNS name 
@@ -130,6 +154,11 @@ Network Load Balancer has one static IP address per AZ and you can attach an Ela
 ### Your boss asked you to scale your Auto Scaling Group based on the number of requests per minute your application makes to your database. What should you do?
 There's no CloudWatch Metric for "requests per minute" for backend-to-database connections. You need to create a CloudWatch Custom Metric, then create a CloudWatch Alarm.
 
+</details>
+
+<details>
+  <summary>  5. RDS, Aurora, Elastic Cache </summary>
+
 ## **`RDS, Aurora, Elastic Cache`**
 ### is there possibility to setup the read replicas DB as the disaster recovery DB
 Yes, we can setup as MultiAZ
@@ -143,4 +172,5 @@ Yes, we can setup as MultiAZ
 3. Synchronization is established between the two databases<br/>
 ![image](https://github.com/bhargavsp/aws_solution-architect/assets/45779321/fdc8413f-c39f-4a15-bcba-51f289179d63)
 
+</details>
 
