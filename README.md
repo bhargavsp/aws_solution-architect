@@ -6,5 +6,5 @@
 * **`Section - 17`**
 * **`Section - 20`** - Serverless Solution Architectures discussion
 * **`Section - 26`**
-* **`Section - 27`**
+
 * **`Section - 29`** - More Solution Architectures discussion
