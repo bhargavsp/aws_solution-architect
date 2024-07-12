@@ -55,3 +55,4 @@ used by the snow family devices, you needed a cli instead there is an AWS OpsHub
 * DataSync: Schedule data sync from on-premises to AWS, or to AWS 
 * Snowcone / Snowball / Snowmobile: to move large amount of data to the cloud, physically 
 * Database: for specific workloads, usually with indexing and querying
+
