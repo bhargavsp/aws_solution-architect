@@ -9,6 +9,13 @@
 **`ELB & ASG`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q%26A.md#elb--asg
 **`RDS, Aurora, Elastic Cache`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q%26A.md#rds-aurora-elastic-cache
 
+## **`Exam Tips`**
+| TIP | Understanding |
+| :---: | :---: |
+The loewst operational overhead | which effectively means what is the quickest and easiest way we can implement this with the least amount of effort and maintenance required 
+The lowest overall cost | which means the cheapst and 
+The most secure | means the securest
+The most Fault Tolerant and Available | Which means the my service available when I need it to be and can it withstand faults elsewhere in network or the architecture
 
 <details>
   <summary>  1. AWS Introduction </summary>
