@@ -5,7 +5,10 @@
 **`AWS Intro`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q%26A.md#aws-introduction
 **`EC2`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q&A.md#ec2
 **`IAM`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q&A.md#iam
-https://github.com/bhargavsp/aws_solution-architect/edit/main/aws%20Q%26A.md#rds-aurora-elastic-cache
+**`AMI`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q%26A.md#ami
+**`ELB & ASG`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q%26A.md#elb--asg
+**`RDS, Aurora, Elastic Cache`** | https://github.com/bhargavsp/aws_solution-architect/blob/main/aws%20Q%26A.md#rds-aurora-elastic-cache
+
 
 <details>
   <summary>  1. AWS Introduction </summary>
