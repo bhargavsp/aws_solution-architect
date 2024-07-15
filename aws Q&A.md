@@ -184,3 +184,11 @@ Yes, we can setup as MultiAZ
 
 </details>
 
+<details>
+  <summary>  5. AWS Budgets </summary>
+
+## **`AWS Budgets`**
+###
+
+
+</details>
