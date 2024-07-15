@@ -12,14 +12,17 @@
 ## **`Exam Tips`**
 | TIP | Understanding |
 | :---: | :---: |
-The loewst operational overhead | which effectively means what is the quickest and easiest way we can implement this with the least amount of effort and maintenance required 
+The loewst o ead | which effectively means what is the quickest and easiest way we can implement this with the least amount of effort and maintenance required 
 The lowest overall cost | which means the cheapst and 
 The most secure | means the securest
 The most Fault Tolerant and Available | Which means the my service available when I need it to be and can it withstand faults elsewhere in network or the architecture
+the most cost efficient |  
 AWS Budgets | AWS Budgets provides the most stre
 ELB | always recommended to allow the web/application tier to the inbound HTTPS Security Group for the loadd balancer
 Database | database doesnt need to initiate connections to the upper tiers 
 Database | DMS (Database Migratin Service) focus on data migration not to rewrite the SQL queries for the application
+Saving plan vs Reserved instance | Both are the commitment for the 1 - 3 yeasrs, but the savings are for the consistent amount of the usage in USD per hour, and the reserved are for the instance configurations, type and the region
+spot instance | it is mainly used for the stateless application but not the stateful appliction as we loss the data if the intances are termincated
 savings plan | Reserved Instances savings plan covers only Amazon EC2, Elasticsearch, RDS, Redshift
 savings plan | Compute Instances Savings Plans covers only Amazon EC2, Fargate, Lambda 
 savings plan | SageMaker savings plan is only for sagerMaker instance alone
@@ -41,7 +44,7 @@ Tape Gateway | Tape Gateway enables you to replace using physical tapes on premi
 File Gateway | supports NFS/SMB protocols
 Volume Gateway | supports ISCSI protocols
 AWS snowball | It is used to transfer the data physically in a device (it is mostly usefull if we have the large amount of the data that needs to uploaded to the aws cloud)
-
+Instance scheduler | used to schedule the instances start and stop based on our requirement,it works for the EC2 instances and the RDS database as well 
 
 
 
