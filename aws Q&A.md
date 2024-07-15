@@ -27,13 +27,21 @@ AWS config | lets us to define the rules and check of newely created volumes are
 S3 storage lens | used tp monitor and identity the S3 buckets usage and activity accross the organization 
 S3 | if question says access use frequently pick the `standard` 
 S3 | if question says access infrequently pick the `S3-infrequent` storage class
-S3 | if question says access rarely pick the `S3-Glacier` storage class
+S3 | if question says access rarely pick but need to accesss the data immediately (1 - 2 times a year) with the less amount of the time then pick the `S3-Glacier Instant` storage class 
+S3 | if question says access rarely pick but need to accesss the data not immediately (5 - 12 hours) with the less amount of the time then pick the `S3-Glacier flexible retrieval` storage class 
+S3 | if question says access rarely pick but need to accesss the data not immediately (12 - 48 hours) with the less amount of the time then pick the `S3-Glacier Deep archive` storage class 
 S3 | if question says access there is no pattern pick the `S3-intelligent` storage class tier
 Aurora global database | whihc offer async replication
 Data Sync | It is a data transfer servie that makes easy to transfer data from on-prem to S3 or EFS
 Transit Gateway | communication b/w 2 or more VPCs peacefully
 VPC peering | good for communication of only 2 Vpcs
 AWS Direct connect | It is good for the hybrid cloud
+Tape data | This type of data cannot be stored in the NFS storage, it has a ISCSI format and uses the SAN (storage area networking) protocol
+Tape Gateway | Tape Gateway enables you to replace using physical tapes on premises with virtual tapes in AWS without changing existing backup workflows, the data from snwoball transfered to the Amazon S3 Glacier Flexible Retrieval and Amazon S3 Glacier Deep Archive not the s3 standarad
+File Gateway | supports NFS/SMB protocols
+Volume Gateway | supports ISCSI protocols
+AWS snowball | It is used to transfer the data physically in a device (it is mostly usefull if we have the large amount of the data that needs to uploaded to the aws cloud)
+
 
 
 
