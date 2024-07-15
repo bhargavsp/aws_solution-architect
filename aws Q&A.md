@@ -16,6 +16,26 @@ The loewst operational overhead | which effectively means what is the quickest a
 The lowest overall cost | which means the cheapst and 
 The most secure | means the securest
 The most Fault Tolerant and Available | Which means the my service available when I need it to be and can it withstand faults elsewhere in network or the architecture
+AWS Budgets | AWS Budgets provides the most stre
+ELB | always recommended to allow the web/application tier to the inbound HTTPS Security Group for the loadd balancer
+Database | database doesnt need to initiate connections to the upper tiers 
+Database | DMS (Database Migratin Service) focus on data migration not to rewrite the SQL queries for the application
+savings plan | Reserved Instances savings plan covers only Amazon EC2, Elasticsearch, RDS, Redshift
+savings plan | Compute Instances Savings Plans covers only Amazon EC2, Fargate, Lambda 
+savings plan | SageMaker savings plan is only for sagerMaker instance alone
+AWS config | lets us to define the rules and check of newely created volumes are encrypted
+S3 storage lens | used tp monitor and identity the S3 buckets usage and activity accross the organization 
+S3 | if question says access use frequently pick the `standard` 
+S3 | if question says access infrequently pick the `S3-infrequent` storage class
+S3 | if question says access rarely pick the `S3-Glacier` storage class
+S3 | if question says access there is no pattern pick the `S3-intelligent` storage class tier
+Aurora global database | whihc offer async replication
+Data Sync | It is a data transfer servie that makes easy to transfer data from on-prem to S3 or EFS
+Transit Gateway | communication b/w 2 or more VPCs peacefully
+VPC peering | good for communication of only 2 Vpcs
+AWS Direct connect | It is good for the hybrid cloud
+
+
 
 <details>
   <summary>  1. AWS Introduction </summary>
@@ -188,7 +208,7 @@ Yes, we can setup as MultiAZ
   <summary>  5. AWS Budgets </summary>
 
 ## **`AWS Budgets`**
-###
+### 
 
 
 </details>
