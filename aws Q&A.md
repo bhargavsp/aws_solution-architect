@@ -12,7 +12,7 @@
 ## **`Exam Tips`**
 | TIP | Understanding |
 | :---: | :---: |
-The loewst o ead | which effectively means what is the quickest and easiest way we can implement this with the least amount of effort and maintenance required 
+The loewst operational overhead | which effectively means what is the quickest and easiest way we can implement this with the least amount of effort and maintenance required 
 The lowest overall cost | which means the cheapst and 
 The most secure | means the securest
 The most Fault Tolerant and Available | Which means the my service available when I need it to be and can it withstand faults elsewhere in network or the architecture
@@ -50,6 +50,14 @@ Instance scheduler | used to schedule the instances start and stop based on our 
 Amazon Macie | used to discover personally identifiable information (PII)
 real life stream | amazon kinesis
 durable, low latency database, single digit milliseconds | dynamodb
+canary realease deployment for API gateway | Canary release is a technique to reduce the risk of introducing a new software version in production by slowly rolling out the change to a small subset of users before rolling it out to the entire infrastructure and making it available to everybody. 
+cloudfront signed URLs | used to give access to particular set of the users for accessing certain content, not giving access to all the users 
+If the load is not predictable | always go for the serverless
+aws cognito identity pool | uses the 3rd party app for the authentiation from thefederated identities
+aws cognito user pools | used to give the access to the web/mobile app for the authentiation
+
+
+
 
 <details>
   <summary>  1. AWS Introduction </summary>
