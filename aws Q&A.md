@@ -58,7 +58,7 @@ aws cognito user pools | used to give the access to the web/mobile app for the a
 Multi AZ cluster deployment | comes with 2 read replicas for the more reads
 multi az instance deployment | comes with just the stand by instance but no read replica
 RPO vs RTO
-
+Redis vs Memcached | Memcached is mainly used for caching data, and redis is used for the persistent data(stored data) ex: session data which needs to be used for storing the session of the user 
 
 <details>
   <summary>  1. AWS Introduction </summary>
