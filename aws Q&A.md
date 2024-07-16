@@ -48,6 +48,7 @@ iscsi vtl | is for the tape data
 AWS snowball | It is used to transfer the data physically in a device (it is mostly usefull if we have the large amount of the data that needs to uploaded to the aws cloud)
 Instance scheduler | used to schedule the instances start and stop based on our requirement,it works for the EC2 instances and the RDS database as well 
 Amazon Macie | used to discover personally identifiable information (PII)
+Amazon GuardDuty | help protect your AWS accounts, workloads, and data from threats.
 real life stream | amazon kinesis
 durable, low latency database, single digit milliseconds | dynamodb
 canary realease deployment for API gateway | Canary release is a technique to reduce the risk of introducing a new software version in production by slowly rolling out the change to a small subset of users before rolling it out to the entire infrastructure and making it available to everybody. 
@@ -59,6 +60,8 @@ Multi AZ cluster deployment | comes with 2 read replicas for the more reads
 multi az instance deployment | comes with just the stand by instance but no read replica
 RPO vs RTO
 Redis vs Memcached | Memcached is mainly used for caching data, and redis is used for the persistent data(stored data) ex: session data which needs to be used for storing the session of the user 
+AWS KMS | EKS supports using the AWS KMS keys to provide the `envelope encryption` of kubernetes secrets in EKS, Envelope encryption adds an extra layer of the addition customer management layer of the encryption for the application secrets or the user data that is stored within the kubernetes cluster 
+
 
 <details>
   <summary>  1. AWS Introduction </summary>
