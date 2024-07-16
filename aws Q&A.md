@@ -55,8 +55,9 @@ cloudfront signed URLs | used to give access to particular set of the users for 
 If the load is not predictable | always go for the serverless
 aws cognito identity pool | uses the 3rd party app for the authentiation from thefederated identities
 aws cognito user pools | used to give the access to the web/mobile app for the authentiation
-
-
+Multi AZ cluster deployment | comes with 2 read replicas for the more reads
+multi az instance deployment | comes with just the stand by instance but no read replica
+RPO vs RTO
 
 
 <details>
