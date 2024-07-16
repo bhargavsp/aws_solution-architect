@@ -61,7 +61,7 @@ multi az instance deployment | comes with just the stand by instance but no read
 RPO vs RTO
 Redis vs Memcached | Memcached is mainly used for caching data, and redis is used for the persistent data(stored data) ex: session data which needs to be used for storing the session of the user 
 AWS KMS | EKS supports using the AWS KMS keys to provide the `envelope encryption` of kubernetes secrets in EKS, Envelope encryption adds an extra layer of the addition customer management layer of the encryption for the application secrets or the user data that is stored within the kubernetes cluster 
-
+Hibernation | While the instance is in hibernation, you pay only for the EBS volumes and Elastic IP Addresses attached to it; there are no other hourly charges. It is not possible to enable or disable hibernation for an instance after it has been launched. 
 
 <details>
   <summary>  1. AWS Introduction </summary>
