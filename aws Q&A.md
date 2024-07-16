@@ -39,14 +39,17 @@ Data Sync | It is a data transfer servie that makes easy to transfer data from o
 Transit Gateway | communication b/w 2 or more VPCs peacefully
 VPC peering | good for communication of only 2 Vpcs
 AWS Direct connect | It is good for the hybrid cloud
+storage gateway | connects the on-premises data to the cloud data
 Tape data | This type of data cannot be stored in the NFS storage, it has a ISCSI format and uses the SAN (storage area networking) protocol
 Tape Gateway | Tape Gateway enables you to replace using physical tapes on premises with virtual tapes in AWS without changing existing backup workflows, the data from snwoball transfered to the Amazon S3 Glacier Flexible Retrieval and Amazon S3 Glacier Deep Archive not the s3 standarad
 File Gateway | supports NFS/SMB protocols
 Volume Gateway | supports ISCSI protocols
+iscsi vtl | is for the tape data
 AWS snowball | It is used to transfer the data physically in a device (it is mostly usefull if we have the large amount of the data that needs to uploaded to the aws cloud)
 Instance scheduler | used to schedule the instances start and stop based on our requirement,it works for the EC2 instances and the RDS database as well 
-
-
+Amazon Macie | used to discover personally identifiable information (PII)
+real life stream | amazon kinesis
+durable, low latency database, single digit milliseconds | dynamodb
 
 <details>
   <summary>  1. AWS Introduction </summary>
